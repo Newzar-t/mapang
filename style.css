@@ -1,30 +1,49 @@
-:root{
-    --font-title: "Mochiy Pop One", sans-serif;
-   --font-basic: "Heebo", sans-serif;
+:root {
+  --font-title: "Mochiy Pop One", sans-serif;
+  --font-basic: "Heebo", sans-serif;
 
-   --color-blue : #76B7CE;
-   --color-white : #F5F0E4;
-   --color-maroon : #AB6037 ;
-   --color-green : #AAB357 ;
-   --color-yellow : #DDBA7F ;
+  --color-blue: #76b7ce;
+  --color-white: #f5f0e4;
+  --color-maroon: #ab6037;
+  --color-green: #aab357;
+  --color-yellow: #ddba7f;
 
-   --font-title-size : 32px;
-   --font-subtitle-size : 24px;
-   --font-text-size: 12px;
-   --font-small-size: 8px;
+  --font-title-size: 32px;
+  --font-subtitle-size: 24px;
+  --font-text-size: 12px;
+  --font-small-size: 8px;
 }
 
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html, body{
-    font-size:var(--font-text-size);
-    font-style:normal;
-    font-optical-sizing: auto;
-    width:100%;
-    min-height:100vh;
+html,
+body {
+  font-size: var(--font-text-size);
+  font-style: normal;
+  font-optical-sizing: auto;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.btn {
+  height: 40px;
+  width: 180px;
+  background-color: var(--color-blue);
+  border-radius: 9999999px;
+  border: 2px #ffffffb2 solid;
+  color: var(--color-white);
+  box-shadow: #ffffffb2 3px 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn:hover {
+  height: 45px;
+  width: 190px;
+  background-color: var(--color-white);
+  color: var(--color-blue);
 }
