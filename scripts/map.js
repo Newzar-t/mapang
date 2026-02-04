@@ -31,29 +31,43 @@
     let pinElement = document.createElement("div");
     pinElement.id = "marker";
 
-    new mapboxgl.Marker(pinElement).setLngLat(monument).setPopup(popup).addTo(map)
+    pinElement.addEventListener("click", () => {
+        activityDisplay();
+    })
+
+    new mapboxgl.Marker(pinElement).setLngLat(monument).setPopup(popup).addTo(map);
+
  })
 
- function showActivity(){
+ 
+    function activityDisplay(mapPin) {
+      let newActivity = document.createElement("div");
 
-    let newActivity = document.createElement("div");
+      newActivity.className = "activity-container";
 
-    newActivity.className = "activy-popup";
-
-    newActivity.innerHTML = 
-
-    `
+      newActivity.innerHTML = `
     <div class="activity-event">
      <img src="public/pictures/washingtonView.webp" />
      <div class="activity-text">
      <h1>Visite et promenade</h1>
-     <h2>
+     <h2>14h-17h</h2>
+
+     <p>Organisé par Monica</p>
+     <span class="activity-footer">
+     <button class="activity-button">Rejoindre </button>
+     
+     </span>
+     </div>
      </div>
 
-     </div>
-    `
+    `;
 
- }
- 
+      document.body.appendChild(newActivity);
+
+      mapPin.addEventListener("click", () => {
+        console.log("hey")
+      })
+    }
+
  
 
