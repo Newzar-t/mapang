@@ -12,17 +12,3 @@
    --font-text-size: 12px;
    --font-small-size: 8px;
 }
-
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-}
-
-html, body{
-    font-size:var(--font-text-size);
-    font-optical-sizing: auto;
-    width:100%;
-    min-height:100vh;
-}
