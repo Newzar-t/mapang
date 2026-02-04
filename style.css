@@ -1,4 +1,5 @@
 :root{
+    --font-title: "Mochiy Pop One", sans-serif;
    --font-basic: "Heebo", sans-serif;
 
    --color-blue : #76B7CE;
@@ -22,6 +23,7 @@
 
 html, body{
     font-size:var(--font-text-size);
+    font-style:normal;
     font-optical-sizing: auto;
     width:100%;
     min-height:100vh;
