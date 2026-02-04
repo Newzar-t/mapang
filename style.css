@@ -52,3 +52,27 @@ p{
     font-weight:600;
 }
 
+.basic-button{
+    color:var(--color-white);
+    background-color: #93c7da;
+    font-size: var(--font-text-size);
+    border:5px solid var(--color-white);
+    border-radius: 30px;
+    padding: 5px 20px 5px 20px;
+    width:fit-content;
+    font-family: var(--font-title);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.btn-cross-picto{
+    width:20%;
+    height:100%;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+
+
+
