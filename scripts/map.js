@@ -49,8 +49,8 @@
     <div class="activity-event">
      <img src="public/pictures/washingtonView.webp" />
      <div class="activity-text">
-     <h1>Visite et promenade</h1>
-     <h2>14h-17h</h2>
+     <h2>Visite et promenade</h2>
+     <h3>14h-17h</h3>
 
      <p>Organisé par Monica</p>
      <span class="activity-footer">

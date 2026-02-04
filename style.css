@@ -8,7 +8,7 @@
    --color-green : #AAB357 ;
    --color-yellow : #DDBA7F ;
 
-   --font-title-size : 32px;
+   --font-title-size : 30px;
    --font-subtitle-size : 24px;
    --font-text-size: 12px;
    --font-small-size: 8px;
@@ -28,3 +28,27 @@ html, body{
     width:100%;
     min-height:100vh;
 }
+
+h1{
+    font-family: var(--font-title);
+    font-weight:600;
+    font-size: var(--font-title-size);
+}
+
+h2{
+    font-family: var(--font-title);
+    font-size: var(--font-subtitle-size);
+    font-weight: 400;
+}
+
+h3{
+      font-family: var(--font-title);
+      font-size: 18px;  
+}
+
+p{
+    font-family: var(--font-basic);
+    font-size: var(--font-text-size);
+    font-weight:600;
+}
+
