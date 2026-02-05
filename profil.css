@@ -1,0 +1,128 @@
+.profil {
+  z-index: 0;
+  height: 100vh;
+  background-color: var(--color-blue);
+  font-size: var(--font-subtitle-size);
+  color: var(--color-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.perso {
+  z-index: 99;
+  height: 100vh;
+  width: 100%;
+  background-color: white;
+  border-radius: 30px;
+  font-family: var(--font-title);
+  padding-top: 30px;
+}
+.info_p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 30vh;
+}
+.pdp {
+  background-color: white;
+  height: 120px;
+  width: 120px;
+  border-radius: 999999999px;
+  border: 2px var(--color-green) solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -60px;
+}
+.fond {
+  background-color: var(--color-green);
+  height: 110px;
+  width: 110px;
+  border-radius: 999999999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fond__mapi {
+  height: 100px;
+}
+.categorie__btn {
+  background-color: #ffd68f;
+  height: 80px;
+  width: 80px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: black 2px 2px;
+}
+.crea {
+  height: 40px;
+  width: 40px;
+  border-radius: 999999999px;
+  margin-top: -30px;
+  margin-left: 60px;
+  background-color: white;
+}
+.pseudo__age {
+  color: black;
+  font-size: var(--font-texte-size);
+}
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+  gap: 2px;
+  font-size: var(--font-text-size);
+}
+.categorie {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: -50;
+}
+.categorie__items {
+  color: black;
+  font-size: var(--font-text-size);
+}
+.categorie__section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+}
+.profil__description {
+  width: 100%;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  margin-left: 70px;
+  font-size: var(--font-text-size);
+  height: 30vh;
+  margin-top: -60px;
+}
+.description__titre {
+  font-size: 16px;
+  margin: 80px 1px 10px 1px;
+}
+.trait {
+  border-bottom: 1px solid black;
+  padding: 5px 10px 5px 10px;
+  gap: 5px;
+}
+
+.description__items {
+  padding: 10px 20px 10px 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  gap: 5px;
+}

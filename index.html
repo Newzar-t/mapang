@@ -10,64 +10,69 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="profil.css" />
     <link rel="stylesheet" href="views/login.css" />
     <title>Mapang - Connexion</title>
   </head>
   <body>
-    <section>
-      <h1>Ton Mapi</h1>
+    <section class="profil">
       <div class="perso">
-        <div class="info-p">
+        <div class="info_p">
           <div class="pdp">
-            <!--<img src="" alt="">-->
-            <!--<img src="" alt="">-->
+            <div class="fond">
+              <img class="fond__mapi" src="img/Fichier 1.svg" alt="" />
+            </div>
           </div>
-          <h2 class="pseudo__age"></h2>
-          <div class="lieu">
-            <div class="ville"></div>
-            <div class="pays"></div>
-            <!--<img src="" alt="">-->
+          <button class="categorie__btn crea" id="bouton__crea">
+            <img src="img/dashicons_admin-customizer.svg" alt="" />
+          </button>
+          <h2 class="pseudo__age">Pseudo age</h2>
+          <div class="info">
+            <img src="img/ph_map-pin-fill.png" alt="" />
+            <div class="ville">Paris,</div>
+            <div class="pays">France</div>
           </div>
         </div>
         <div class="categorie">
-          <div class="categorie__badges">
-            <button class="categorie__btn">
-              <!--<img src="" alt="">-->
+          <div class="categorie__section">
+            <button class="categorie__btn" id="bouton_badge">
+              <img src="img/streamline-flex-color_star-badge-flat.svg" alt="" />
             </button>
-            <div class="categorie__title"></div>
-            <div class="categorie__nombre"></div>
+            <div class="categorie__items"><strong>Badges</strong></div>
+            <div class="categorie__items">5</div>
           </div>
 
-          <div class="categorie__activites">
-            <button class="categorie__btn">
-              <!--<img src="" alt="">-->
+          <div class="categorie__section">
+            <button class="categorie__btn" id="bouton_activites">
+              <img src="img/streamline-plump-color_ball-flat.svg" alt="" />
             </button>
-            <div class="categorie__title"></div>
-            <div class="categorie__nombre"></div>
+            <div class="categorie__items"><strong>Activités</strong></div>
+            <div class="categorie__items">10</div>
           </div>
 
-          <div class="categorie__relations">
-            <button class="categorie__btn">
-              <!--<img src="" alt="">-->
+          <div class="categorie__section">
+            <button class="categorie__btn" id="bouton_relations">
+              <img src="img/fa7-solid_user-friends.svg" alt="" />
             </button>
-            <div class="categorie__title"></div>
-            <div class="categorie__nombre"></div>
+            <div class="categorie__items"><strong>Relations</strong></div>
+            <div class="categorie__items">32</div>
           </div>
         </div>
         <div class="profil__description">
-          <div class="description__items">
-            <!--<img src="" alt="">-->
-            <div class="desciption__titre"></div>
-            <div class="description__info"></div>
+          <div class="description__titre"><strong>Description</strong></div>
+          <div class="description__items trait">
+            <img src="img/Frame.svg" alt="" />
+            <div class="desciption__titre">Genre:</div>
+            <div class="description__info">Homme</div>
+          </div>
+          <div class="description__items trait">
+            <img src="img/material-symbols-light_language.svg" alt="" />
+            <div class="desciption__titre">Langues:</div>
+            <div class="description__info">Français, Anglais, Espagnole</div>
           </div>
           <div class="description__items">
-            <!--<img src="" alt="">-->
-            <div class="desciption__titre"></div>
-            <div class="description__info"></div>
-          </div>
-          <div class="description__items">
-            <!--<img src="" alt="">-->
-            <div class="desciption__titre"></div>
+            <img src="img/mynaui_heart.svg" alt="" />
+            <div class="desciption__titre">Point d'intérêt</div>
             <div class="description__info"></div>
           </div>
         </div>
