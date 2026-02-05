@@ -54,13 +54,13 @@
 }
 
 .search-area{
-    position:relative;
-    top:8%; 
+    position:absolute;
+    top:6%; 
     left:0;
     display:flex;
     justify-content: center;
     align-items:end;
-    height:auto;
+    height:42px;
     width: 100%;
     z-index:100;
 }
@@ -68,7 +68,7 @@
 .search-bar{
     margin-top:5%;
     width:85%;
-    height:8rem;
+    height:100%;
     background-color:var(--color-white);
     border-radius:4rem;
     display:flex;
@@ -239,37 +239,80 @@ box-shadow: 3px 4px 0px 8px var(--color-blue);
     width:100%;
     height:100%;
     background-color: var(--color-blue);
+    display:flex;
+    flex-direction: column;
+    justify-content:flex-end;
+    align-items:center ;
 }
 
+#calendar-viewport>h1{
+    color: var(--color-white);
+    text-align:center;
+    margin-bottom:2rem;
+}
+
+#event-date{
+    color:black;
+    font-size: var(--font-subtitle-size);
+}
 .eventsComing{
     width:100%;
     height:85%;
+    background-color: var(--color-white);
     display:flex;
-    justify-content:center;
+    justify-content:flex-start;
+    flex-wrap: wrap;
+    padding-top:4rem;
+    align-items: center;
     flex-direction: column;
+        border-top-left-radius: 4rem;
+    border-top-right-radius: 4rem;
+    gap:2rem;
+
 
 }
 
 .event-preview{
-    width:80%;
-    height:20rem;
+    width:85%;
+    height:22rem;
     border-radius: 4rem;
     border:4px solid var(--color-blue);
     display:flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
+    justify-content:flex-start;
+    align-items: center;
+
 }
 
 .event-image-calendar{
     width:100%;
-    height:30%;
-    object-fit: contain;
+    height:40%;
+    border-top-left-radius: 4rem;
+    border-top-right-radius: 4rem;
+    object-fit: cover;
 }
 
 .event-preview span{
 width:100%;
+padding:2% 3% 0 3%;
+gap:5px;
+display:flex;
+flex-direction: column;
 }
+
+.event-group-pic{
+    width:80px;
+    position: relative;
+    left:120;
+}
+
+#return-map{
+    margin-top:25%;
+    width:300px;
+    font-size: 16px;
+}
+
+
 
 /* CHAT VIEWPORT */
 
@@ -278,19 +321,27 @@ width:100%;
     height:100%;
     display:flex;
     flex-direction: column;
-    align-items: flex-end;
+    justify-content: flex-end;
     background-color: var(--color-blue);
 }
 
+#chat-viewport>h1{
+        color: var(--color-white);
+    text-align:center;
+    margin-bottom:2rem;
+}
+
 .all-chats-preview{
-/*     position:relative;
-    bottom:0; */
-    background:var(--color-white);
     width:100%;
     height:85%;
+    background-color: var(--color-white);
     display:flex;
-    justify-content: center;
+    justify-content:flex-start;
+    flex-wrap: wrap;
+    padding-top:4rem;
+    align-items: center;
     flex-direction: column;
-    padding: 2rem 1rem 0 1rem;
-
+        border-top-left-radius: 4rem;
+    border-top-right-radius: 4rem;
+    gap:2rem;
 }

@@ -1,154 +1,184 @@
- document.addEventListener("DOMContentLoaded", () => {
-    
+document.addEventListener("DOMContentLoaded", () => {
+  let mapViewport = document.querySelector("#map-viewport");
 
-     mapboxgl.accessToken = 'pk.eyJ1IjoiYW5hZWxsZTEyMyIsImEiOiJjbWw4MndidGEwMjY1M2VxczlrNHRnNGtkIn0.tnkWnrql_viOmVKbEdomvg';
-      
-     var monument = [-77.0353, 38.8895];
-     var restaurant = [-77.0321, 38.8975] ;
-     var walking = [ -77.0445, 38.8909 ]
-     
-     const map = new mapboxgl.Map({
-        container: 'boxMap' ,
-        center: monument,
-        zoom:14,
-        style:"mapbox://styles/anaelle123/cml83d51g004q01s9gy9f95ik"
+  mapboxgl.accessToken =
+    "pk.eyJ1IjoiYW5hZWxsZTEyMyIsImEiOiJjbWw4MndidGEwMjY1M2VxczlrNHRnNGtkIn0.tnkWnrql_viOmVKbEdomvg";
+
+  var monument = [-77.0353, 38.8895];
+  var restaurant = [-77.0321, 38.8975];
+  var walking = [-77.0445, 38.8909];
+
+  const map = new mapboxgl.Map({
+    container: "boxMap",
+    center: monument,
+    zoom: 14,
+    style: "mapbox://styles/anaelle123/cml83d51g004q01s9gy9f95ik",
+  });
+
+  let pinElement = document.createElement("div");
+  pinElement.id = "markerMuseum";
+
+  let pinRestaurant = document.createElement("div");
+  pinRestaurant.id = "markerResto";
+
+  let pinHiking = document.createElement("div");
+  pinHiking.id = "markerHiking";
+
+  let isEventOnScreen = false;
+
+  pinElement.addEventListener("click", () => {
+    let popups = document.querySelectorAll(".activity-container");
+    if (isEventOnScreen == false) {
+      popups.forEach((pop) => {
+        pop.style.display = "none";
+      });
+      document.querySelector("#Pedro").style.display = "flex";
+      isEventOnScreen = true;
+    } else {
+      isEventOnScreen = false;
+    }
+  });
+
+  pinRestaurant.addEventListener("click", () => {
+    let popups = document.querySelectorAll(".activity-container");
+
+    if (isEventOnScreen == false) {
+      popups.forEach((pop) => {
+        pop.style.display = "none";
+      });
+
+      document.querySelector("#Yerin").style.display = "flex";
+
+      isEventOnScreen = true;
+    } else {
+      isEventOnScreen = false;
+    }
+  });
+
+  pinHiking.addEventListener("click", () => {
+    let popups = document.querySelectorAll(".activity-container");
+    if (isEventOnScreen == false) {
+      popups.forEach((pop) => {
+        pop.style.display = "none";
+      });
+
+      document.querySelector("#Tanaka").style.display = "flex";
+
+      isEventOnScreen = true;
+    } else {
+      isEventOnScreen = false;
+    }
+  });
+
+  new mapboxgl.Marker(pinElement).setLngLat(monument).addTo(map);
+  new mapboxgl.Marker(pinRestaurant).setLngLat(restaurant).addTo(map);
+  new mapboxgl.Marker(pinHiking).setLngLat(walking).addTo(map);
+
+  activityDisplay(
+    mapViewport,
+    "public/pictures/restaurantImage.jpg",
+    "Repas gastronomique",
+    "12h-14h",
+    "Yerin",
+    "activity-food",
+  );
+  activityDisplay(
+    mapViewport,
+    "public/pictures/hikingImage.jpg",
+    "Balade et gaufres !",
+    "16h-19h",
+    "Tanaka",
+    "activity-hiking",
+  );
+  activityDisplay(
+    mapViewport,
+    "public/pictures/washingtonView.webp",
+    "Visite du Washington Center",
+    "15h-17h",
+    "Pedro",
+    "activity-museum",
+  );
+
+  let closingBtns = document.querySelectorAll(".closingBtn");
+
+  closingBtns.forEach((btn) => {
+    let popups = document.querySelectorAll(".activity-container");
+
+    btn.addEventListener("click", () => {
+      popups.forEach((pop) => {
+        pop.style.display = "none";
+      });
     });
+  });
 
+  //////// ---------------------------------------------------------------------------- ////
 
-    let pinElement = document.createElement("div");
-    pinElement.id = "markerMuseum";
-
-    let pinRestaurant = document.createElement("div");
-    pinRestaurant.id = "markerResto";
-
-    let pinHiking = document.createElement("div");
-    pinHiking.id = "markerHiking";
-
-    let isEventOnScreen = false
-
-    pinElement.addEventListener("click", () => {
-     let popups = document.querySelectorAll(".activity-container")
-     if(isEventOnScreen == false){
-      popups.forEach((pop) => {
-      pop.style.display = "none"
-      })
-              document.querySelector("#Pedro").style.display = "flex"
-      isEventOnScreen = true;
-        }
-        else{
-            isEventOnScreen = false
-        }  
-    })
-
-    pinRestaurant.addEventListener("click", () => {
-
-     let popups = document.querySelectorAll(".activity-container")
-
-     if(isEventOnScreen == false){
-      popups.forEach((pop) => {
-        pop.style.display = "none"
-      })
-
-      document.querySelector("#Yerin").style.display = "flex"
-
-      isEventOnScreen = true;
-        }
-        else{
-            isEventOnScreen = false
-        }  
-    })
-
-    pinHiking.addEventListener("click", () => {
-
-     let popups = document.querySelectorAll(".activity-container")
-     if(isEventOnScreen == false){
-      popups.forEach((pop) => {
-        pop.style.display = "none"
-      })
-
-      document.querySelector("#Tanaka").style.display = "flex"
-
-      isEventOnScreen = true;
-        }
-        else{
-            isEventOnScreen = false
-        }  
-    })
-
-    new mapboxgl.Marker(pinElement).setLngLat(monument).addTo(map);
-   new mapboxgl.Marker(pinRestaurant).setLngLat(restaurant).addTo(map);
-    new mapboxgl.Marker(pinHiking).setLngLat(walking).addTo(map);
-
-activityDisplay("public/pictures/restaurantImage.jpg", "Repas gastronomique", "12h-14h", "Yerin", "activity-food");
-activityDisplay("public/pictures/hikingImage.jpg", "Balade et gaufres !", "16h-19h", "Tanaka", "activity-hiking");
-activityDisplay("public/pictures/washingtonView.webp", "Visite du Washington Center", "15h-17h", "Pedro", "activity-museum");
-
-   let closingBtns = document.querySelectorAll(".closingBtn");
-
-
-    closingBtns.forEach((btn) => {
-
-      let popups = document.querySelectorAll(".activity-container")
-      
-      btn.addEventListener("click", () => {
-       
-              popups.forEach((pop) => {
-      pop.style.display = "none"
-      })
-
-      })
-
-   })
-
-   //////// ---------------------------------------------------------------------------- ////
-
-   document.querySelector("#activity-food").addEventListener("click", () => {
+  /* document.querySelector("#activity-food").addEventListener("click", () => {
     let activityAdded = false;
 
-    if(activityAdded == false){
-        newEvent("public/pictures/restaurantImage.jpg", "Repas gastronomique","12h-14h", "Yerin","activity-food"   );
-        activityAdded = true;
+    if (activityAdded == false) {
+      newEvent(
+        "Repas gastronomique",
+        "public/pictures/restaurantImage.jpg",
+        "12h-14h",
+        "Yerin",
+        "activity-food",
+      );
+      activityAdded = true;
+    } else {
+      return;
     }
-    else{
-        return ;
-    }
-   })
+  });
 
-      document.querySelector("#activity-hiking").addEventListener("click", () => {
+  document.querySelector("#activity-hiking").addEventListener("click", () => {
     let activityAdded = false;
 
-    if(activityAdded == false){
-        newEvent("public/pictures/hikingImage.jpg", "Balade et gaufres !","16h-19h", "Tanaka","activity-hiking" );
-        activityAdded = true;
+    if (activityAdded == false) {
+      newEvent(
+        "Balade et gaufres !",
+        "public/pictures/hikingImage.jpg",
+        "16h-19h",
+        "Tanaka",
+        "activity-hiking",
+      );
+      activityAdded = true;
+    } else {
+      return;
     }
-    else{
-        return ;
-    }
-   })
+  });
 
-      document.querySelector("#activity-museum").addEventListener("click", () => {
+  document.querySelector("#activity-museum").addEventListener("click", () => {
     let activityAdded = false;
 
-    if(activityAdded == false){
-        newEvent("public/pictures/washingtonView.webp", "Visite du Washington Center","15h-17h", "Pedro","activity-museum" );
-        activityAdded = true;
+    if (activityAdded == false) {
+      newEvent(
+        "Visite du Washington Center",
+        "public/pictures/washingtonView.webp",
+        "15h-17h",
+        "Pedro",
+        "activity-museum",
+      );
+      activityAdded = true;
+    } else {
+      return;
     }
-    else{
-        return ;
-    }
-   })
+  }); */
+});
 
-  
- })
+function activityDisplay(
+  mapViewport,
+  urlImage,
+  activityTitle,
+  activityHour,
+  pseudo,
+  eventType,
+) {
+  let newActivity = document.createElement("div");
 
- 
-    function activityDisplay(urlImage, activityTitle, activityHour, pseudo, eventType) {
-      let newActivity = document.createElement("div");
+  newActivity.className = "activity-container";
+  newActivity.id = `${pseudo}`;
 
-      newActivity.className = "activity-container";
-      newActivity.id = `${pseudo}`
-
-      newActivity.innerHTML = `
+  newActivity.innerHTML = `
 
 
      <img class="activity-event-image" src="${urlImage}" />
@@ -169,18 +199,17 @@ activityDisplay("public/pictures/washingtonView.webp", "Visite du Washington Cen
 
     `;
 
-    newActivity.style.display = "none"
-      document.body.appendChild(newActivity);
-    }
+  newActivity.style.display = "none";
+  mapViewport.appendChild(newActivity);
+}
+/* 
+function newEvent(title, image, hour, pseudo) {
+  let eventContainer = document.querySelector(".eventsComing");
 
-    function newEvent(title, image, hour, pseudo){
+  let event = document.createElement("div");
+  event.classList.add("event-preview");
 
-    let eventContainer = document.querySelector(".eventsComing")
-
-    let event = document.createElement("div");
-    event.classList.add("event-preview")
-
-    event.innerHTML = `
+  event.innerHTML = `
        <img class="event-image-calendar" src="${image}" />
        <span>
        <h2>${title}</h2>
@@ -189,11 +218,8 @@ activityDisplay("public/pictures/washingtonView.webp", "Visite du Washington Cen
     </span>
     <img src="public/pictures/peopleGroupPreview.png" />
     <button>Voir sur la carte</button>
-    `
+    `;
 
-    eventContainer.appendChild(event)
-
+  eventContainer.appendChild(event);
 }
-
- 
-
+ */
