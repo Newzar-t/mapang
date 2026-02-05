@@ -9,86 +9,112 @@
       href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&family=Mochiy+Pop+One&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+  
     <link rel="stylesheet" href="profil.css" />
     <link rel="stylesheet" href="views/login.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>Mapang - Connexion</title>
   </head>
   <body>
     <section class="profil">
-      <div class="perso">
-        <div class="info_p">
-          <div class="pdp">
-            <div class="fond">
-              <img class="fond__mapi" src="img/Fichier 1.svg" alt="" />
-            </div>
-          </div>
-          <button class="categorie__btn crea" id="bouton__crea">
-            <img src="img/dashicons_admin-customizer.svg" alt="" />
-          </button>
-          <h2 class="pseudo__age">Pseudo, 21 ans</h2>
-          <div class="info">
-            <img src="img/ph_map-pin-fill.png" alt="" />
-            <div class="ville">Paris,</div>
-            <div class="pays">France</div>
-          </div>
-        </div>
-        <div class="categorie">
-          <div class="categorie__section">
-            <button class="categorie__btn" id="bouton_badge">
-              <img src="img/streamline-flex-color_star-badge-flat.svg" alt="" />
-            </button>
-            <div class="categorie__items"><strong>Badges</strong></div>
-            <div class="categorie__items">5</div>
-          </div>
-
-          <div class="categorie__section">
-            <button class="categorie__btn" id="bouton_activites">
-              <img src="img/streamline-plump-color_ball-flat.svg" alt="" />
-            </button>
-            <div class="categorie__items"><strong>Activités</strong></div>
-            <div class="categorie__items">10</div>
-          </div>
-
-          <div class="categorie__section">
-            <button class="categorie__btn" id="bouton_relations">
-              <img src="img/fa7-solid_user-friends.svg" alt="" />
-            </button>
-            <div class="categorie__items"><strong>Relations</strong></div>
-            <div class="categorie__items">32</div>
-          </div>
-        </div>
-        <div class="profil__description">
-          <div class="description__titre"><strong>Description</strong></div>
-          <div class="description__items trait">
-            <img src="img/Frame.svg" alt="" />
-            <div class="desciption__titre"><strong>Genre:</strong></div>
-            <div class="description__info">Homme</div>
-          </div>
-          <div class="description__items trait">
-            <img src="img/material-symbols-light_language.svg" alt="" />
-            <div class="desciption__titre"><strong>Langues:</strong></div>
-            <div class="description__info">Français, Anglais, Espagnol</div>
-          </div>
-          <div class="description__items">
-            <img src="img/mynaui_heart.svg" alt="" />
-            <div class="desciption__titre">
-              <strong>Point d'intérêt</strong>
-            </div>
-            <div class="description__info"></div>
-          </div>
-        </div>
-        <div class="activites">
-          <div class="envies">
-            <div class="envie">Rencontrer des locaux</div>
-            <div class="envie">Faire du sport</div>
-          </div>
-          <div class="envies">
-            <div class="envie">Me détendre</div>
-            <div class="envie">Visites culturelles !</div>
-          </div>
-        </div>
-      </div>
+        <article class="perso">
+    
+            <!-- HEADER PROFIL -->
+            <header class="info_p">
+                <div class="pdp">
+                    <div class="fond">
+                        <img class="fond__mapi" src="img/Fichier 1.svg" alt="Photo de profil" />
+                    </div>
+                </div>
+    
+                <button class="categorie__btn crea" id="bouton__crea" aria-label="Personnaliser le profil">
+                    <img src="img/dashicons_admin-customizer.svg" alt="" />
+                </button>
+    
+                <h1 class="pseudo__age">Pseudo, 21 ans</h1>
+    
+                <p class="info">
+                    <img src="img/ph_map-pin-fill.png" alt="" />
+                    <span class="ville">Paris</span>,
+                    <span class="pays">France</span>
+                </p>
+            </header>
+    
+            <!-- STATISTIQUES -->
+            <section class="categorie" aria-labelledby="stats-titre">
+                <h2 id="stats-titre" class="visually-hidden">Statistiques du profil</h2>
+    
+                <ul class="categorie__list">
+                    <li class="categorie__section">
+                        <button class="categorie__btn" id="bouton_badge" aria-label="Voir les badges">
+                            <img src="img/streamline-flex-color_star-badge-flat.svg" alt="" />
+                        </button>
+                        <div>
+                            <h3>Badges</h3>
+                            <p>5</p>
+                        </div>
+                    </li>
+    
+                    <li class="categorie__section">
+                        <button class="categorie__btn" id="bouton_activites" aria-label="Voir les activités">
+                            <img src="img/streamline-plump-color_ball-flat.svg" alt="" />
+                        </button>
+                        <div>
+                            <h3>Activités</h3>
+                            <p>10</p>
+                        </div>
+                    </li>
+    
+                    <li class="categorie__section">
+                        <button class="categorie__btn" id="bouton_relations" aria-label="Voir les relations">
+                            <img src="img/fa7-solid_user-friends.svg" alt="" />
+                        </button>
+                        <div>
+                            <h3>Relations</h3>
+                            <p>32</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+    
+            <!-- DESCRIPTION -->
+            <section class="profil__description">
+                <h2>Description</h2>
+    
+                <ul class="description__list">
+                    <li class="description__items trait">
+                        <img src="img/Frame.svg" alt="" />
+                        <strong>Genre :</strong>
+                        <span>Homme</span>
+                    </li>
+    
+                    <li class="description__items trait">
+                        <img src="img/material-symbols-light_language.svg" alt="" />
+                        <strong>Langues :</strong>
+                        <span>Français, Anglais, Espagnol</span>
+                    </li>
+    
+                    <li class="description__items">
+                        <img src="img/mynaui_heart.svg" alt="" />
+                        <strong>Points d’intérêt :</strong>
+                        <span></span>
+                    </li>
+                </ul>
+            </section>
+    
+            <!-- ACTIVITÉS / ENVIES -->
+            <section class="activites">
+                <h2>Envies</h2>
+    
+                <ul class="envies">
+                    <li class="envie">Rencontrer des locaux</li>
+                    <li class="envie">Faire du sport</li>
+                    <li class="envie">Me détendre</li>
+                    <li class="envie">Visites culturelles</li>
+                </ul>
+            </section>
+    
+        </article>
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
@@ -96,6 +122,5 @@
     <script type="module" src="scripts/login.js"></script>
     <script src="main.js"></script>
 
-    <script src="profil.js"></script>
   </body>
 </html>

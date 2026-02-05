@@ -1,154 +1,255 @@
-.profil {
-  z-index: 0;
-  height: 100vh;
-  background-color: var(--color-blue);
-  font-size: var(--font-subtitle-size);
-  color: var(--color-white);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.perso {
-  z-index: 99;
-  height: 100vh;
-  width: 100%;
-  background-color: white;
-  border-radius: 30px;
-  font-family: var(--font-title);
-  padding-top: 30px;
-}
-.info_p {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 30vh;
-}
-.pdp {
-  background-color: white;
-  height: 120px;
-  width: 120px;
-  border-radius: 999999999px;
-  border: 2px var(--color-green) solid;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: -60px;
-}
-.fond {
-  background-color: var(--color-green);
-  height: 110px;
-  width: 110px;
-  border-radius: 999999999px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.fond__mapi {
-  height: 100px;
-}
-.categorie__btn {
-  background-color: #ffd68f;
-  height: 80px;
-  width: 80px;
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: black 2px 2px;
-}
-.crea {
-  height: 40px;
-  width: 40px;
-  border-radius: 999999999px;
-  margin-top: -30px;
-  margin-left: 60px;
-  background-color: white;
-}
-.pseudo__age {
-  color: black;
-  font-size: var(--font-texte-size);
-}
-.info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: black;
-  gap: 2px;
-  font-size: var(--font-text-size);
-}
-.categorie {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  margin-top: -60px;
-}
-.categorie__items {
-  color: black;
-  font-size: var(--font-text-size);
-}
-.categorie__section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-  gap: 5px;
-}
-.profil__description {
-  width: 100%;
-  color: black;
-  display: flex;
-  justify-content: center;
-  align-items: start;
-  flex-direction: column;
-  margin-left: 50px;
-  font-size: var(--font-text-size);
-  height: 30vh;
-  margin-top: -80px;
-}
-.description__titre {
-  font-size: 16px;
-  margin: 80px 1px 10px 1px;
-}
-.trait {
-  border-bottom: 1px solid black;
-  padding: 5px 10px 5px 10px;
-  gap: 5px;
+:root {
+  --font-title: "Mochiy Pop One", sans-serif;
+  --font-basic: "Heebo", sans-serif;
+
+  --color-blue: #76b7ce;
+  --color-white: #f5f0e4;
+  --color-maroon: #ab6037;
+  --color-green: #aab357;
+  --color-yellow: #e1be57;
+
+  --font-title-size: 32px;
+  --font-subtitle-size: 24px;
+  --font-text-size: 12px;
+  --font-small-size: 8px;
 }
 
-.description__items {
-  padding: 10px 20px 10px 1px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: var(--font-texte-size);
-  gap: 5px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.envies {
+
+html,
+body {
+  font-size: var(--font-text-size);
+  font-style: normal;
+  font-optical-sizing: auto;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+
+/* ===================== */
+/* PROFIL */
+/* ===================== */
+
+.profil {
+  background-color: var(--color-blue);
+  min-height: 100vh;
+  height:100%;
+  width:100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: end;
+  font-family: var(--font-basic);
+}
+
+.profil h2, .profil h1{
+  font-family: var(--font-title);
+}
+
+
+.profil li, .profil p{
+  font-family: var(--font-basic);
+  font-size: var(--font-text-size);
+}
+
+/* Carte */
+.profil .perso{
+  width: 100%;
+  height:95%;
+  background: var(--color-white);
+  border-top-left-radius: 4rem;
+  border-top-right-radius: 4rem;
+  padding: 60px 20px 30px 20px;
+  display:flex;
+  flex-direction:column;
+  gap:3%;
+  position: relative;
+    overflow-y: scroll;
+}
+
+/* ===================== */
+/* HEADER */
+/* ===================== */
+
+.profil .info_p {
+  display: flex;
   flex-direction: column;
-  gap: 10px;
+  align-items: center;
+  text-align: center;
+  width:100%;
 }
-.envie {
+
+/* Avatar */
+.profil .pdp {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profil .fond {
+  width: 110px;
+  height:100px;
+  border-radius: 50%;
+  background: var(--color-green);
+}
+
+.profil .fond img{
+  width:70%;
+}
+
+/* Bouton édition */
+.profil .crea {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  width: 45px;
+  height: 45px;
+  border-radius: 16px;
+  border: none;
+  background: var(--color-yellow);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Nom */
+.profil .pseudo__age {
+  font-size: 30px;
+  margin-top: 15px;
+  font-size: var(--font-texte-size);
   color: black;
-  font-size: 11px;
-  border: 3px var(--color-blue) solid;
-  border-radius: 99999px;
-  padding: 5px 10px 5px 10px;
-  width: 180px;
+}
+
+/* Localisation */
+.profil .info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--font-text-size);
+  color: black;
+}
+
+/* ===================== */
+/* STATS */
+/* ===================== */
+
+
+.profil .categorie__list {
+  margin: 30px 0;
+  padding: 0;
+  list-style: none;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.profil .categorie__section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.profil .categorie__btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 18px;
+  border: none;
+  background: var(--color-yellow);
+
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.activites {
+
+/* ===================== */
+/* DESCRIPTION */
+/* ===================== */
+
+.profil .profil__description {
+  margin-top: 10px;
+}
+
+.profil .profil__description h2 {
+  color: black;
+  margin-bottom: 15px;
+}
+
+.profil .description__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.profil .description__items {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 0;
+  color: black;
+}
+
+.profil .description__items.trait {
+  border-bottom: 1px solid #ddd;
+}
+
+/* ===================== */
+/* ENVIES */
+/* ===================== */
+
+.profil .activites {
+  margin-top: 20px;
+}
+
+.profil .activites h2 {
+  color: black;
+  margin-bottom: 15px;
+}
+
+.profil .envies {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Boutons */
+.profil .envie {
+  width: 100%;
+  min-height: 42px;
+
+  background: var(--color-blue);
+  border: 2px solid #ffffffb2;
+  border-radius: 9999px;
+
+  color: white;
+  font-size: var(--font-text-size);
+
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60px;
-  gap: 10px;
-  margin-top: 10px;
+
+  box-shadow: 3px 4px #ffffffb2;
+  padding: 0 16px;
+
+  text-align: center;
+  transition: 0.2s ease;
+}
+
+.profil .envie:hover {
+  background: white;
+  color: var(--color-blue);
 }
