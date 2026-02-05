@@ -86,21 +86,79 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  pinCoffee.addEventListener("click", () => {
+    let popups = document.querySelectorAll(".activity-container");
+    if (isEventOnScreen == false) {
+      popups.forEach((pop) => {
+        pop.style.display = "none";
+      });
+
+      document.querySelector("#Michael").style.display = "flex";
+
+      isEventOnScreen = true;
+    } else {
+      isEventOnScreen = false;
+    }
+  });
+
+  pinMemorial.addEventListener("click", () => {
+    let popups = document.querySelectorAll(".activity-container");
+    if (isEventOnScreen == false) {
+      popups.forEach((pop) => {
+        pop.style.display = "none";
+      });
+
+      document.querySelector("#Charlie").style.display = "flex";
+
+      isEventOnScreen = true;
+    } else {
+      isEventOnScreen = false;
+    }
+  });
+
+    pinStage.addEventListener("click", () => {
+      let popups = document.querySelectorAll(".activity-container");
+      if (isEventOnScreen == false) {
+        popups.forEach((pop) => {
+          pop.style.display = "none";
+        });
+
+        document.querySelector("#Mohammed").style.display = "flex";
+
+        isEventOnScreen = true;
+      } else {
+        isEventOnScreen = false;
+      }
+    });
+
+        pinMuseum.addEventListener("click", () => {
+          let popups = document.querySelectorAll(".activity-container");
+          if (isEventOnScreen == false) {
+            popups.forEach((pop) => {
+              pop.style.display = "none";
+            });
+
+            document.querySelector("#Filipe").style.display = "flex";
+
+            isEventOnScreen = true;
+          } else {
+            isEventOnScreen = false;
+          }
+        });
+
   new mapboxgl.Marker(pinElement).setLngLat(monument).addTo(map);
   new mapboxgl.Marker(pinRestaurant).setLngLat(restaurant).addTo(map);
   new mapboxgl.Marker(pinHiking).setLngLat(walking).addTo(map);
 
   new mapboxgl.Marker(pinCoffee).setLngLat(cafeDolphin).addTo(map);
 
-    new mapboxgl.Marker(pinMemorial).setLngLat(vietnamVeteransMemorial).addTo(map);
+  new mapboxgl.Marker(pinMemorial)
+    .setLngLat(vietnamVeteransMemorial)
+    .addTo(map);
 
-        new mapboxgl.Marker(pinStage)
-          .setLngLat(arenaStage)
-          .addTo(map);
+  new mapboxgl.Marker(pinStage).setLngLat(arenaStage).addTo(map);
 
-              new mapboxgl.Marker(pinMuseum)
-                .setLngLat(nationalMuseumAsianArt)
-                .addTo(map);
+  new mapboxgl.Marker(pinMuseum).setLngLat(nationalMuseumAsianArt).addTo(map);
 
   activityDisplay(
     mapViewport,
@@ -150,18 +208,18 @@ document.addEventListener("DOMContentLoaded", () => {
     "public/pictures/museumasianart.jpeg",
     "Musée des Arts asiatiques",
     "10h-12h",
-    "Filipé",
+    "Filipe",
     "activity-asianart",
   );
 
-    activityDisplay(
-      mapViewport,
-      "public/pictures/vvmemorial.jpg",
-      "Mémorial des vétérans du Vietnam",
-      "13h-15h",
-      "Charlie",
-      "activity-memorial",
-    );
+  activityDisplay(
+    mapViewport,
+    "public/pictures/vvmemorial.jpg",
+    "Mémorial des vétérans du Vietnam",
+    "13h-15h",
+    "Charlie",
+    "activity-memorial",
+  );
 
   let closingBtns = document.querySelectorAll(".closingBtn");
 
