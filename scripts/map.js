@@ -79,9 +79,9 @@
    new mapboxgl.Marker(pinRestaurant).setLngLat(restaurant).addTo(map);
     new mapboxgl.Marker(pinHiking).setLngLat(walking).addTo(map);
 
-          activityDisplay("public/pictures/restaurantImage.jpg", "Repas gastronomique", "12h-14h", "Yerin");
-                activityDisplay("public/pictures/hikingImage.jpg", "Balade et gaufres !", "16h-19h", "Tanaka");
-                      activityDisplay("public/pictures/washingtonView.webp", "Visite du Washington Center", "15h-17h", "Pedro");
+activityDisplay("public/pictures/restaurantImage.jpg", "Repas gastronomique", "12h-14h", "Yerin", "activity-food");
+activityDisplay("public/pictures/hikingImage.jpg", "Balade et gaufres !", "16h-19h", "Tanaka", "activity-hiking");
+activityDisplay("public/pictures/washingtonView.webp", "Visite du Washington Center", "15h-17h", "Pedro", "activity-museum");
 
    let closingBtns = document.querySelectorAll(".closingBtn");
 
@@ -100,10 +100,49 @@
 
    })
 
+   //////// ---------------------------------------------------------------------------- ////
+
+   document.querySelector("#activity-food").addEventListener("click", () => {
+    let activityAdded = false;
+
+    if(activityAdded == false){
+        newEvent("public/pictures/restaurantImage.jpg", "Repas gastronomique","12h-14h", "Yerin","activity-food"   );
+        activityAdded = true;
+    }
+    else{
+        return ;
+    }
+   })
+
+      document.querySelector("#activity-hiking").addEventListener("click", () => {
+    let activityAdded = false;
+
+    if(activityAdded == false){
+        newEvent("public/pictures/hikingImage.jpg", "Balade et gaufres !","16h-19h", "Tanaka","activity-hiking" );
+        activityAdded = true;
+    }
+    else{
+        return ;
+    }
+   })
+
+      document.querySelector("#activity-museum").addEventListener("click", () => {
+    let activityAdded = false;
+
+    if(activityAdded == false){
+        newEvent("public/pictures/washingtonView.webp", "Visite du Washington Center","15h-17h", "Pedro","activity-museum" );
+        activityAdded = true;
+    }
+    else{
+        return ;
+    }
+   })
+
+  
  })
 
  
-    function activityDisplay(urlImage, activityTitle, activityHour, pseudo) {
+    function activityDisplay(urlImage, activityTitle, activityHour, pseudo, eventType) {
       let newActivity = document.createElement("div");
 
       newActivity.className = "activity-container";
@@ -122,7 +161,7 @@
 
      <p>Organisé par ${pseudo}</p>
      <span class="activity-footer">
-     <button class="basic-button activity-button">Rejoindre <img class="btn-cross-picto" src="public/Pictogrammes/addCross.svg" /></button>
+     <button id="${eventType}" class="basic-button activity-button">Rejoindre <img class="btn-cross-picto" src="public/Pictogrammes/addCross.svg" /></button>
      <img class="activity-group-preview" src="public/pictures/peopleGroupPreview.png" />
      </span>
      </div>
@@ -133,6 +172,28 @@
     newActivity.style.display = "none"
       document.body.appendChild(newActivity);
     }
+
+    function newEvent(title, image, hour, pseudo){
+
+    let eventContainer = document.querySelector(".eventsComing")
+
+    let event = document.createElement("div");
+    event.classList.add("event-preview")
+
+    event.innerHTML = `
+       <img class="event-image-calendar" src="${image}" />
+       <span>
+       <h2>${title}</h2>
+       <h3>${hour}</h3>
+       <p>${pseudo}</p>
+    </span>
+    <img src="public/pictures/peopleGroupPreview.png" />
+    <button>Voir sur la carte</button>
+    `
+
+    eventContainer.appendChild(event)
+
+}
 
  
 
