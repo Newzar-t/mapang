@@ -345,3 +345,29 @@ flex-direction: column;
     border-top-right-radius: 4rem;
     gap:2rem;
 }
+
+.chat-box{
+    width:90%;
+    height:10rem;
+    display: flex;
+    border-bottom:2px solid var(--color-blue)
+}
+
+.chat-box img{
+    width:15%;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+
+.chat-text{
+    width:80%;
+    height:100%;
+    margin-left:5%;
+}
+
+.chat-send-time{
+    color:var(--color-blue);
+    font-family: 600;
+    margin-top:5px;
+    text-align:right;
+}
