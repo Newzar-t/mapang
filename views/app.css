@@ -142,6 +142,41 @@ box-shadow: 3px 4px 0px 8px var(--color-blue);
     border-radius: 50%;
 }
 
+#markerCoffee{
+    width:70px;
+    height:70px;
+    background-image: url('../public/Pictogrammes/pinCoffee.svg');
+    background-size: cover;
+    border-radius: 50%;
+}
+
+#markerMemorial{
+    width:70px;
+    height:70px;
+    background-image: url('../public/Pictogrammes/pinHiking.svg');
+    background-size: cover;
+    border-radius: 50%;
+}
+
+#markerStage{
+    width:70px;
+    height:70px;
+    background-image: url('../public/Pictogrammes/pinStage.svg');
+    background-size: cover;
+    border-radius: 50%;
+}
+
+#markerMuseeAsian{
+    width:70px;
+    height:70px;
+    background-image: url('../public/Pictogrammes/pinMuseum.svg');
+    background-size: cover;
+    border-radius: 50%;
+
+}
+
+
+
 .mapboxgl-popup {
         max-width: 200px;
     }

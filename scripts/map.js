@@ -7,11 +7,15 @@ document.addEventListener("DOMContentLoaded", () => {
   var monument = [-77.0353, 38.8895];
   var restaurant = [-77.0321, 38.8975];
   var walking = [-77.0445, 38.8909];
+  var cafeDolphin = [-77.034368, 38.9000471];
+  var vietnamVeteransMemorial = [-77.0477132, 38.8912933];
+  var arenaStage = [-77.0205975, 38.8775368];
+  var nationalMuseumAsianArt = [-77.0264462, 38.887961];
 
   const map = new mapboxgl.Map({
     container: "boxMap",
     center: monument,
-    zoom: 14,
+    zoom: 12,
     style: "mapbox://styles/anaelle123/cml83d51g004q01s9gy9f95ik",
   });
 
@@ -23,6 +27,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let pinHiking = document.createElement("div");
   pinHiking.id = "markerHiking";
+
+  let pinCoffee = document.createElement("div");
+  pinCoffee.id = "markerCoffee";
+
+  let pinMemorial = document.createElement("div");
+  pinMemorial.id = "markerMemorial";
+
+  let pinStage = document.createElement("div");
+  pinStage.id = "markerStage";
+
+  let pinMuseum = document.createElement("div");
+  pinMuseum.id = "markerMuseeAsian";
 
   let isEventOnScreen = false;
 
@@ -74,6 +90,18 @@ document.addEventListener("DOMContentLoaded", () => {
   new mapboxgl.Marker(pinRestaurant).setLngLat(restaurant).addTo(map);
   new mapboxgl.Marker(pinHiking).setLngLat(walking).addTo(map);
 
+  new mapboxgl.Marker(pinCoffee).setLngLat(cafeDolphin).addTo(map);
+
+    new mapboxgl.Marker(pinMemorial).setLngLat(vietnamVeteransMemorial).addTo(map);
+
+        new mapboxgl.Marker(pinStage)
+          .setLngLat(arenaStage)
+          .addTo(map);
+
+              new mapboxgl.Marker(pinMuseum)
+                .setLngLat(nationalMuseumAsianArt)
+                .addTo(map);
+
   activityDisplay(
     mapViewport,
     "public/pictures/restaurantImage.jpg",
@@ -98,6 +126,42 @@ document.addEventListener("DOMContentLoaded", () => {
     "Pedro",
     "activity-museum",
   );
+
+  activityDisplay(
+    mapViewport,
+    "public/pictures/bakeryPic.webp",
+    "Café et blabla",
+    "17h-19h",
+    "Michael",
+    "activity-coffee",
+  );
+
+  activityDisplay(
+    mapViewport,
+    "public/pictures/arenaStage.jpg",
+    "Orchestre de Mozart",
+    "20h - 23h",
+    "Mohammed",
+    "activity-stage",
+  );
+
+  activityDisplay(
+    mapViewport,
+    "public/pictures/museumasianart.jpeg",
+    "Musée des Arts asiatiques",
+    "10h-12h",
+    "Filipé",
+    "activity-asianart",
+  );
+
+    activityDisplay(
+      mapViewport,
+      "public/pictures/vvmemorial.jpg",
+      "Mémorial des vétérans du Vietnam",
+      "13h-15h",
+      "Charlie",
+      "activity-memorial",
+    );
 
   let closingBtns = document.querySelectorAll(".closingBtn");
 
