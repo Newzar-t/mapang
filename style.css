@@ -3,7 +3,7 @@
   --font-basic: "Heebo", sans-serif;
 
   --color-blue: #76b7ce;
-  --color-white: #f5f0e4;
+  --color-white: #ffffff;
   --color-maroon: #ab6037;
   --color-green: #aab357;
   --color-yellow: #ddba7f;
@@ -28,7 +28,7 @@ body {
   width: 100%;
   min-height: 100vh;
   max-height: 100vh;
-  overflow-y: hidden;
+  overflow:hidden;
 }
 
 h1 {
@@ -61,7 +61,7 @@ p {
   border: 5px solid var(--color-white);
   border-radius: 30px;
   padding: 5px 20px 5px 20px;
-  width: fit-content;
+  width: 150px;
   font-family: var(--font-title);
   display: flex;
   justify-content: center;

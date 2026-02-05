@@ -3,7 +3,7 @@
    --font-basic: "Heebo", sans-serif;
 
    --color-blue : #76B7CE;
-   --color-white : #F5F0E4;
+   --color-white : #ffffff;
    --color-maroon : #AB6037 ;
    --color-green : #AAB357 ;
    --color-yellow : #DDBA7F ;
@@ -18,32 +18,35 @@ body{
     background:var(--color-blue);
     display:flex;
     justify-content: center;
-    flex-direction: column;
-    flex-wrap: wrap;
+    flex-direction: row;
+    flex-wrap:nowrap;
+    min-width: 100vw;
+    height:100%;
+    overflow:hidden;
 }
 
-.navigation-section{
-    position:absolute;
-    bottom:0;
+.app-section{
+    width:100vw;
+    height:100%;
     display:flex;
-    z-index:100;
     justify-content: center;
-    align-items: center;
-    width:100%;
-    height:12%;
-    background-color: var(--color-blue);
 }
+
 
 .navigation-bar{
+    position: absolute;
+    bottom:5%;
     width:90%;
-    height:80%;
+    height:12%;
+    z-index:100;
     background-color: var(--color-white);
-    border-radius: 4rem;
+    border-radius: 5rem;
     display:inline-flex;
     justify-content: space-evenly;
     padding:0 1rem;
-    margin-bottom: 2%;
+    margin: auto 5% 3% 5%;
     align-items: center;
+    box-shadow: 0px 9px 12px 6px rgba(13, 131, 186, 0.24);
 }
 
 .navigate-link{
@@ -69,6 +72,55 @@ body{
     object-fit:contain;
 }
 
+.search-area{
+    position:absolute;
+    top:0; 
+    left:0;
+    display:flex;
+    justify-content: center;
+    align-items:end;
+    height:30%;
+    width: 100%;
+    z-index:100;
+}
+
+.search-bar{
+    position:absolute;
+    top:10%;
+    width:85%;
+    height:20%;
+    background-color:var(--color-white);
+    border-radius:4rem;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 1.5rem 0 1.5rem;
+    -webkit-box-shadow: 3px 4px 0px 8px var(--color-blue); 
+box-shadow: 3px 4px 0px 8px var(--color-blue);
+}
+
+.search-input{
+    border: none;
+    width:75%;
+    height: 100%;
+    background-color: var(--color-white);
+}
+
+.search-bar img{
+ height:60%;
+ object-fit: contain;
+}
+
+.search-filter{
+    border:none;
+    background:transparent;
+}
+
+.search-filter img{
+     height:85%;
+}
+
+
 
 
 .active-link{
@@ -82,10 +134,28 @@ body{
 
 #boxMap { position: absolute; top: 0; bottom: 0; width: 100%; }
 
-#marker{
-    width:50px;
-    height:50px;
-    background-color: red;
+#markerMuseum{
+    width:70px;
+    height:70px;
+    background-image: url('../public/Pictogrammes/pinMuseum.svg');
+    background-size: cover;
+    border-radius: 50%;
+}
+
+#markerResto{
+    width:70px;
+    height:70px;
+    background-image: url('../public/Pictogrammes/pinFork.svg');
+    background-size: cover;
+    border-radius: 50%;
+}
+
+#markerHiking{
+    width:70px;
+    height:70px;
+    background-image: url('../public/Pictogrammes/pinHiking.svg');
+    background-size: cover;
+    border-radius: 50%;
 }
 
 .mapboxgl-popup {
@@ -93,26 +163,14 @@ body{
     }
 
 .activity-container{
-    position:absolute;
-    bottom:0;
-    width:100%;
-    height: 60%;
-    border-top-left-radius: 4rem;
-    border-top-right-radius: 4rem;
-    background-color: var(--color-blue);
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.activity-event{
-    margin-top: 2rem;
-    width:85%;
-    min-height:50%;
-    height: fit-content;
-    background-color: var(--color-white);
+    position: absolute;
+    bottom: 20%;
+    width:90%;
+    height:28rem;
+    background-color: transparent;
     border-radius: 2rem;
     padding-bottom:2rem;
+    margin:auto 5% auto 5%;
     display:flex;
     align-items: center;
     flex-direction: column;
@@ -122,18 +180,43 @@ body{
 
 .activity-event-image{
     width:100%;
-    height:5rem;
-    border-top-left-radius: 2rem;
-    border-top-right-radius: 2rem;
+    height:50%;
+    border-radius:4rem;
     object-fit: cover;
 }
 
 .activity-text{
     width: 90%;
-    height:60%;
+    height:50%;
+    padding: 1.5rem;
     display:flex;
+    justify-content: center;
     flex-direction: column;
     gap:4%;
+    border-radius: 4rem;
+    margin-top:-2rem;
+    background-color: var(--color-white);
+}
+
+.activity-title{
+    position:absolute;
+    font-size: 2rem;
+    font-weight: 600;
+    z-index:10;
+    top:15%;
+ 
+}
+
+#Pedro h2{
+    color: var(--color-maroon);
+}
+
+#Yerin h2{
+    color: var(--color-blue);
+}
+
+#Tanaka h2{
+    color: var(--color-green);
 }
 
 .activity-text span{
@@ -141,6 +224,7 @@ body{
     display:flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top:5%;
 }
 
 .activity-group-preview{
@@ -148,5 +232,20 @@ body{
     height:100%;
     border: none;
     object-fit: contain;
+
+}
+
+.closingBtn{
+    position: absolute;
+    top:3%;
+  right:5%;
+  background-color: #93c7da;
+  border: 3px solid var(--color-white);
+  border-radius: 100%;
+  width:40px;
+  height:40px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
 
 }
